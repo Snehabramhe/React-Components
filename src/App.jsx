@@ -1,7 +1,7 @@
 import "./App.css";
-import Calender from "./components/Calender";
-import ElementClickCalender from "./components/ElementClickCalender";
-import FloatingCalender from "./components/FloatingCalender";
+import Calender from "./components/calender/Calender";
+import ElementClickCalender from "./components/calender/ElementClickCalender";
+import FloatingCalender from "./components/calender/FloatingCalender";
 
 function App() {
   return (
