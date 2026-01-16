@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium */
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* SemiBold */
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/gilroy/Gilroy-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@theme {
+  /* ============================================
+     COLORS
+     ============================================ */
+  --color-panto-orange: #e58411;
+  --color-panto-dark: #1e1e1e;
+  --color-panto-gray: #8d8d8d;
+  --color-panto-light: #f5f5f5;
+
+  /* ============================================
+     FONT FAMILIES
+     ============================================ */
+  --font-family-gilroy: 'Gilroy', 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* ============================================
+     FONT SIZES (from Figma)
+     ============================================ */
+  --font-size-logo: 1.75rem;        /* 28px */
+  --font-size-nav: 1.125rem;        /* 18px */
+  --font-size-heading: 5rem;        /* 80px */
+  --font-size-subheading: 1.5rem;   /* 24px */
+  --font-size-search: 1.125rem;     /* 18px */
+
+  /* ============================================
+     LINE HEIGHTS (from Figma)
+     ============================================ */
+  --line-height-logo: auto;
+  --line-height-nav: auto;
+  --line-height-heading: 1.3;       /* 130% */
+  --line-height-subheading: 1.6;    /* 160% */
+  --line-height-search: 1.5;        /* 150% */
+
+  /* ============================================
+     LETTER SPACING (from Figma)
+     ============================================ */
+  --letter-spacing-logo: 0.01em;    /* 1% */
+  --letter-spacing-nav: 0;          /* 0% */
+  --letter-spacing-heading: -0.01em; /* -1% */
+  --letter-spacing-subheading: 0;   /* 0% */
+  --letter-spacing-search: 0;       /* 0% */
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+@layer base {
+  body {
+    font-family: var(--font-family-gilroy);
+  }
+
+  /* Typography Classes */
+  .text-logo {
+    font-size: var(--font-size-logo);
+    line-height: var(--line-height-logo);
+    letter-spacing: var(--letter-spacing-logo);
+    font-weight: 700; /* Bold */
+  }
+
+  .text-nav {
+    font-size: var(--font-size-nav);
+    line-height: var(--line-height-nav);
+    letter-spacing: var(--letter-spacing-nav);
+    font-weight: 500; /* Medium */
+  }
+
+  .text-heading {
+    font-size: var(--font-size-heading);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-heading);
+    font-weight: 700; /* Bold */
+  }
+
+  .text-subheading {
+    font-size: var(--font-size-subheading);
+    line-height: var(--line-height-subheading);
+    letter-spacing: var(--letter-spacing-subheading);
+    font-weight: 400; /* Regular */
+  }
+
+  .text-search {
+    font-size: var(--font-size-search);
+    line-height: var(--line-height-search);
+    letter-spacing: var(--letter-spacing-search);
+    font-weight: 400; /* Regular */
+  }
+
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    .text-logo {
+      font-size: 1.5rem; /* 24px on mobile */
+    }
+
+    .text-heading {
+      font-size: 2.5rem; /* 40px on mobile */
+    }
+
+    .text-subheading {
+      font-size: 1rem; /* 16px on mobile */
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .text-heading {
+      font-size: 3.5rem; /* 56px on tablet */
+    }
+
+    .text-subheading {
+      font-size: 1.25rem; /* 20px on tablet */
+    }
+  }
+}
+
+/* ============================================
+   CUSTOM UTILITIES
+   ============================================ */
+@layer utilities {
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .text-shadow {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .delay-75 {
+    animation-delay: 75ms;
+  }
+
+  .delay-150 {
+    animation-delay: 150ms;
+  }
+}
